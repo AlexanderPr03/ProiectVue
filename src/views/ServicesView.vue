@@ -1,6 +1,6 @@
 <template>
   <h1>Pagina Servicii!</h1>
-  <form>
+  <form v-on:submit.prevent="trimiteDatePeServer">
     <label for="name">Nume:</label>
     <br><br>
     <input required type="text" id="name" v-model="nume">
@@ -55,6 +55,16 @@ export default {
     methods: {
       modificareCounter() {
         this.$store.commit('actualizeazaContor');
+      },
+      trimiteDatePeServer() {
+         let newUser = {
+          name: this.nume,
+          email: this.email,
+          selected: this.selectat,
+          plata: this.valoareSelectata
+         }
+
+         axios.post("http://localhost:3000/users", {userData:newUser})
       }
     },
     created() {
