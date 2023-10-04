@@ -1,11 +1,30 @@
 <template>
-    <button @click="notificaParinte()" class="button" :style="{backgroundColor: color, marginTop:margineSus}">{{ text }}</button>
+    <button @click="notificaParinte()" class="button" :style="{backgroundColor: color, marginTop:margineSus}">{{ text }} {{ counter }}</button>
 </template>
 
 <script>
 
 export default {
     name:'ButtonComponent',
+    components: {
+
+    },
+    data() {
+        return {
+           nume:'damdwadaw',
+           age:25,
+           persoane: [
+
+           ],
+
+        }
+    },
+    methods: {
+        salutaPersoana() {
+            console.log('Salut!')
+        },
+
+    },
     props: {
         text: {
             type:String,
@@ -14,10 +33,22 @@ export default {
         color:String,
         margineSus:String,
     },
-    methods:{
-        notificaParinte() {
-            this.$emit('butonApasat',this.color);
+    computed: {
+        counter() {
+            return this.$store.state.count;
         }
+    },
+    watch: {
+
+    },
+    created() {
+
+    },
+    mounted() {
+
+    },
+    updated() {
+        
     }
 }
 </script>
@@ -28,6 +59,7 @@ export default {
         height: 50px;
         border: none;
         border-radius: 24px;
+        color: white;;
         cursor: pointer;
     }
 </style>

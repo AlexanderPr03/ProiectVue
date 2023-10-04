@@ -1,4 +1,5 @@
 <template>
+    {{ count }}
     <div id="wrapper" :class="{darkModeClass: darkMode}">
         <!-- <input type="checkbox" @change="console.log('dd')">   -->
       
@@ -29,12 +30,19 @@
   
   export default {
     name: 'HomeComponent',
+    computed: {
+      count() {
+        return this.$store.state.nume;
+      }
+    },
     components: {
       PersonCard
     },
     methods: {
       showTeam() {
         this.afiseazaEchipa = !this.afiseazaEchipa;
+
+
       },
       switchDarkMode() {
         this.darkMode = !this.darkMode;
@@ -53,6 +61,7 @@
         nume:'',
         darkMode:false,
         afiseazaEchipa:false,
+
         dateCarduri: [
           {
             name:'Alexandru',
@@ -61,75 +70,75 @@
             textButton:'Site-ul lui Alexandru',
             margineButon:'20px',
           },
-          // {
-          //   name:'Dumitru',
-          //   color:'#c90a0a',
-          //   email:'dumitru',
-          //   textButton:'Pagina FB a lui Dumitru',
-          //   margineButon:'50px',
-          // },
-          // {
-          //   name:'Maria',
-          //   color:'#029c23',
-          //   email:'maria',
-          //   textButton:'LinkedIn-ul Mariei',
-          //   margineButon:'100px',
-          // },
-          // {
-          //   name:'Alexandru',
-          //   color:'#0a53c9',
-          //   email:'alexandru',
-          //   textButton:'Site-ul lui Alexandru',
-          //   margineButon:'10px',
-          // },
-          // {
-          //   name:'Dumitru',
-          //   color:'#c90a0a',
-          //   email:'dumitru',
-          //   textButton:'Pagina FB a lui Dumitru'
-          // },
-          // {
-          //   name:'Maria',
-          //   color:'#029c23',
-          //   email:'maria',
-          //   textButton:'LinkedIn-ul Mariei'
-          // },
-          // {
-          //   name:'Alexandru',
-          //   color:'#0a53c9',
-          //   email:'alexandru',
-          //   textButton:'Site-ul lui Alexandru'
-          // },
-          // {
-          //   name:'Dumitru',
-          //   color:'#c90a0a',
-          //   email:'dumitru',
-          //   textButton:'Pagina FB a lui Dumitru'
-          // },
-          // {
-          //   name:'Maria',
-          //   color:'#029c23',
-          //   email:'maria',
-          //   textButton:'LinkedIn-ul Mariei'
-          // },
-          // {
-          //   name:'Alexandru',
-          //   color:'#0a53c9',
-          //   email:'alexandru',
-          //   textButton:'Site-ul lui Alexandru'
-          // },
-          // {
-          //   name:'Dumitru',
-          //   color:'#c90a0a',
-          //   email:'dumitru',
-          //   textButton:'Pagina FB a lui Dumitru'
-          // },
-          // {
-          //   name:'Maria',
-          //   color:'#029c23',
-          //   email:'maria',
-          //   textButton:'LinkedIn-ul Mariei'
-          // },
+          {
+            name:'Dumitru',
+            color:'#c90a0a',
+            email:'dumitru',
+            textButton:'Pagina FB a lui Dumitru',
+            margineButon:'50px',
+          },
+          {
+            name:'Maria',
+            color:'#029c23',
+            email:'maria',
+            textButton:'LinkedIn-ul Mariei',
+            margineButon:'100px',
+          },
+          {
+            name:'Alexandru',
+            color:'#0a53c9',
+            email:'alexandru',
+            textButton:'Site-ul lui Alexandru',
+            margineButon:'10px',
+          },
+          {
+            name:'Dumitru',
+            color:'#c90a0a',
+            email:'dumitru',
+            textButton:'Pagina FB a lui Dumitru'
+          },
+          {
+            name:'Maria',
+            color:'#029c23',
+            email:'maria',
+            textButton:'LinkedIn-ul Mariei'
+          },
+          {
+            name:'Alexandru',
+            color:'#0a53c9',
+            email:'alexandru',
+            textButton:'Site-ul lui Alexandru'
+          },
+          {
+            name:'Dumitru',
+            color:'#c90a0a',
+            email:'dumitru',
+            textButton:'Pagina FB a lui Dumitru'
+          },
+          {
+            name:'Maria',
+            color:'#029c23',
+            email:'maria',
+            textButton:'LinkedIn-ul Mariei'
+          },
+          {
+            name:'Alexandru',
+            color:'#0a53c9',
+            email:'alexandru',
+            textButton:'Site-ul lui Alexandru'
+          },
+          {
+            name:'Dumitru',
+            color:'#c90a0a',
+            email:'dumitru',
+            textButton:'Pagina FB a lui Dumitru'
+          },
+          {
+            name:'Maria',
+            color:'#029c23',
+            email:'maria',
+            textButton:'LinkedIn-ul Mariei'
+          },
         ]  
       }
     }

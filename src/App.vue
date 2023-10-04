@@ -1,18 +1,13 @@
 <template>
-  <HomeComponent/>
+  <router-link to="/services">Pagina Servicii</router-link>
+  <router-view/>
+  <nav>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link>
+    <router-link to="/services">Services</router-link>
+  </nav>
+  
 </template>
-
-<script>
-import HomeComponent from './components/HomeComponent.vue';
-
-export default {
-    name: 'App',
-    component: {
-        HomeComponent
-    },
-    components: { HomeComponent }
-}
-</script>
 
 <style>
 #app {
