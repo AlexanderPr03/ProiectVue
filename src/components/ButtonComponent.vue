@@ -1,5 +1,11 @@
 <template>
+    
+    
+
     <button @click="notificaParinte()" class="button" :style="{backgroundColor: color, marginTop:margineSus}">{{ text }} {{ counter }}</button>
+
+    <slot></slot>
+    
 </template>
 
 <script>

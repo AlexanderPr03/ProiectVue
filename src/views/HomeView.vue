@@ -17,16 +17,19 @@
      -->
 
 
+
+
   </div>
 </template>
 
 <script>
 import HomeComponent from '@/components/HomeComponent.vue'
-
+// import ButtonComponent from '@/components/ButtonComponent.vue'
 export default {
   name: 'HomeView', 
   components: {
-    HomeComponent
+    HomeComponent,
+    // ButtonComponent
   },
   methods: {
     schimbaContor() {

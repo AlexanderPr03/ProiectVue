@@ -5,27 +5,44 @@
       
       <img src="../assets/logo.png">
       <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
-      <h1 class="title">Our team</h1>
+      <!-- <h1 class="title">Our team</h1>
     
       <button id="butonEchipa" @click="showTeam()">Afiseaza Echipa</button>
       <br><br>
         <input type="text" v-model="nume">
       <br><br>
         <input type="text" v-model="nume">
-  
-        {{ nume }}
+   -->
+        <!-- {{ nume }} -->
       <br><br>
-      <div class="row" v-if="afiseazaEchipa">
+      <!-- <div class="row" v-if="afiseazaEchipa">
         <PersonCard @darkMode="switchDarkMode" v-for="(card, index) of dateCarduri" :nrPersoanei="index" :butonSus="card.margineButon" :key="card" :name="card.name" :textButton="card.textButton" :colorButton="card.color" :email="card.email"/>
-      </div>
+      </div> -->
+
+      <!-- <CardComponent title="Primul Articol">
+        <template v-slot:tel>
+          <a href="tel:+37369123456">Apeleaza nr de telefon</a>
+        </template>
+        <template v-slot:email>
+          <a href="mailto:a@b.c">Lasa-ne un email</a>
+
+        </template>
+      </CardComponent> -->
+      <button @click="schimbaComponent">Schimba Component</button>
+
+      <keep-alive>
+        <component :is="componentCurent"></component>
+      </keep-alive>
+
     </div>
     
   
   </template>
   
   <script>
-  import PersonCard from '@/components/PersonCard.vue';
-  
+  // import PersonCard from '@/components/PersonCard.vue';
+  import CardComponent from './CardComponent.vue';
+import ProductCard from './ProductCard.vue';
   
   
   export default {
@@ -36,9 +53,20 @@
       }
     },
     components: {
-      PersonCard
+      // PersonCard
+      CardComponent,
+      ProductCard
     },
     methods: {
+      schimbaComponent() {
+        if (this.componentCurent === CardComponent) {
+          this.componentCurent = ProductCard;
+        }
+        else if (this.componentCurent === ProductCard) {
+          this.componentCurent = CardComponent;
+
+        }
+      },  
       showTeam() {
         this.afiseazaEchipa = !this.afiseazaEchipa;
 
@@ -58,6 +86,7 @@
     },
     data() {
       return {
+        componentCurent: CardComponent,
         nume:'',
         darkMode:false,
         afiseazaEchipa:false,

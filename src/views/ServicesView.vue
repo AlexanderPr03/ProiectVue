@@ -75,7 +75,13 @@ export default {
     }
 }
 </script>
-
+<!-- 
 <style>
+  .buton {
+    background-color: purple;
+  }
+</style> -->
+
+<style scoped>
 
 </style>
