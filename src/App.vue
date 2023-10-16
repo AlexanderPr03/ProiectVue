@@ -6,7 +6,6 @@
     <router-link to="/about">About</router-link>
     <router-link to="/services">Services</router-link>
   </nav>
-  
 </template>
 
 <style>

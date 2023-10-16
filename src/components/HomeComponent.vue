@@ -29,10 +29,9 @@
         </template>
       </CardComponent> -->
       <button @click="schimbaComponent">Schimba Component</button>
-
-      <keep-alive>
-        <component :is="componentCurent"></component>
-      </keep-alive>
+      
+      
+      
 
     </div>
     
